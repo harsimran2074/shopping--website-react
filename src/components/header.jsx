@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+import '../index.css'
 const Header = () => {
     const bagItem = useSelector((store)=> store.bagItems.length);
 
   return (
-     <header>
+     <header className="header">
+        
         <div className="logo_container">
             <Link to="/"><img className="myntra_home" src="images/myntra_logo.webp" alt="Myntra Home"/></Link>
         </div>
@@ -38,6 +40,7 @@ const Header = () => {
                 <span className="bag-item-count">{bagItem}</span>
             </Link>
         </div>
+    
     </header>
   )
 }
