@@ -164,6 +164,21 @@ header {
     min-width: 200px;
     justify-content: space-evenly;
 }
+.spinnerContainer {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display:flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+    
+height:500px;
+width:500px;
+    
+    /* visibility: hidden; */
+}
 
 .action_container {
     display: flex;

@@ -1,10 +1,15 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-import { items as Initial_value } from "../data/items";
+
 
 const itemSlice = createSlice({
   name: "items",
-  initialState: Initial_value,
-  reducers: {},
+  initialState: [],
+  reducers: {
+    initialItems: (state,action)=> {
+      
+     return action.payload;
+    }
+  },
 });
 
 const bagSummarySlice = createSlice({
@@ -21,51 +26,55 @@ const bagSummarySlice = createSlice({
   reducers: {},
 });
 
-const bagItemArray = [
-  // {
-  //   id: "001",
-  //   image: "images/1.jpg",
-  //   company: "Carlton London",
-  //   item_name: "Rhodium-Plated CZ Floral Studs",
-  //   original_price: 1045,
-  //   current_price: 606,
-  //   discount_percentage: 42,
-  //   return_period: 14,
-  //   delivery_date: "10 Oct 2023",
-  //   rating: {
-  //     stars: 4.5,
-  //     count: 1400,
-  //   },
-  // },
-];
+const bagItemArray = [];
 
 const bagItemSlice = createSlice({
   name: "bagItems",
   initialState: bagItemArray,
   reducers: {
     addToCart: (state, action) => {
-      
-      console.log(action.payload);
-      return [...state,action.payload]
-      
+      return [...state, action.payload];
     },
-    removeFromCart : (state , action) => {
+    removeFromCart: (state, action) => {
       console.log(action.payload);
       return state.filter((store) => {
-      return store.id!==action.payload
-      }
-    )
-    }
+        return store.id !== action.payload;
+      });
+    },
+  },
+});
+
+const fetchStatusSlice = createSlice({
+  name: "fetchStatus",
+  initialState: {
+    fetchDone: false,
+    currentlyFetching: false,
+  },
+  reducers: {
+    markFetchDone: (state) => {
+      state.fetchDone = true;
+    },
+    markFetchingStarted: (state) => {
+      state.currentlyFetching = true;
+    },
+
+    markFetchingFinished: (state) => {
+      state.currentlyFetching = false;
+    },
   },
 });
 
 const dataStore = configureStore({
   reducer: {
     items: itemSlice.reducer,
+
     bagSummary: bagSummarySlice.reducer,
     bagItems: bagItemSlice.reducer,
+    fetchStatus: fetchStatusSlice.reducer,
   },
 });
 
+export const initialItemAction = itemSlice.actions;
 export const bagItemActions = bagItemSlice.actions;
+export const fetchStatusAction = fetchStatusSlice.actions;
 export default dataStore;

@@ -3,14 +3,15 @@ import { useSelector } from 'react-redux'
 
 const BagSummary = () => {
 
-const bagSummary = useSelector((store) => store.bagSummary.bagSummary)
+const bagSummary = useSelector((store) => store.bagSummary.bagSummary);
+ const bagItem = useSelector((store)=> store.bagItems.length);
 
   return (
 <div className="bag-summary">
 
         
  <div className="bag-details-container">
-    <div className="price-header">{`PRICE DETAILS (${bagSummary.totalItem} Items)`} </div>
+    <div className="price-header">{`PRICE DETAILS (${bagItem} Items)`} </div>
     <div className="price-item">
       <span className="price-item-tag">Total MRP</span>
       <span className="price-item-value">{bagSummary.totalMRP}</span>
