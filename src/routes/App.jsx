@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 function App() {
   
  const fetching = useSelector((store)=> store.fetchStatus.currentlyFetching)
- console.log(fetching);
+ 
   return (
     <>
       

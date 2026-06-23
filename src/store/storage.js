@@ -12,25 +12,15 @@ const itemSlice = createSlice({
   },
 });
 
-const bagSummarySlice = createSlice({
-  name: "bagSummary",
-  initialState: {
-    bagSummary: {
-      totalItem: 10,
-      totalMRP: 2000,
-      totalDiscount: 999,
-      finalPayment: 1000,
-    },
-  },
 
-  reducers: {},
-});
 
-const bagItemArray = [];
+  
+
+// const bagItemArray = [];
 
 const bagItemSlice = createSlice({
   name: "bagItems",
-  initialState: bagItemArray,
+  initialState: [],
   reducers: {
     addToCart: (state, action) => {
       return [...state, action.payload];
@@ -68,7 +58,7 @@ const dataStore = configureStore({
   reducer: {
     items: itemSlice.reducer,
 
-    bagSummary: bagSummarySlice.reducer,
+
     bagItems: bagItemSlice.reducer,
     fetchStatus: fetchStatusSlice.reducer,
   },

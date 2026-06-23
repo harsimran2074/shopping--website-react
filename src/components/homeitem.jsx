@@ -1,14 +1,27 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import  "bootstrap/dist/css/bootstrap.min.css";
 import { bagItemActions } from "../store/storage";
+import { MdAddShoppingCart } from "react-icons/md";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
 
 const HomeItem = ({ item }) => {
+
+const removeItem = (item) => {
+dispatch(bagItemActions.removeFromCart(item.id));
+}
+
   const dispatch = useDispatch();
 
   const AddToBag = (item) => {
     dispatch(bagItemActions.addToCart(item));
   };
+
+  const bagItems = useSelector((store)=> store.bagItems)
+  const bagItemId = bagItems.map((item) => item.id);
+const isInBag = bagItemId.includes(item.id);
+
+
 
   return (
     <>
@@ -24,9 +37,11 @@ const HomeItem = ({ item }) => {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
         </div>
-        <button className="btn-add-bag" onClick={() => AddToBag(item)}>
-          Add to Bag
-        </button>
+        {   isInBag ? <button type="button" className="btn btn-add-bag btn-danger"onClick={()=> {removeItem(item)}}><IoIosRemoveCircleOutline /> Remove</button> 
+        : <button type="button" className="btn  btn-add-bag btn-success" onClick={() => AddToBag(item)}><MdAddShoppingCart /> Add to Bag</button> 
+        }
+        
+
       </div>
     </>
   );

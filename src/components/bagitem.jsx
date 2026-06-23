@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bagItemActions } from '../store/storage'
+import { MdDelete } from "react-icons/md";
+
 const BagItem = ({item}) => {
 
 const dispatch = useDispatch()
@@ -31,7 +33,7 @@ dispatch(bagItemActions.removeFromCart(item.id));
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={()=> removeItem(item)}>X</div>
+    <div className="remove-from-cart" onClick={()=> removeItem(item)}><MdDelete /></div>
   </div>
     
   )
