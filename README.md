@@ -1,16 +1,98 @@
-# React + Vite
+# 🛒 Shopping Cart Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern shopping cart web application built with **React** and **Redux**. The application allows users to browse products, add or remove items from the cart, and view a dynamic price summary with discounts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* Browse products
+* Add items to cart
+* Remove items from cart
+* Dynamic cart summary
+* Total MRP calculation
+* Discount calculation
+* Convenience fee calculation
+* Global state management using Redux
+* Clean and reusable React components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React.js
+* Redux
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* Bootstrap
+* Vite
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│── components/
+│── store/
+│── data/
+│── App.jsx
+│── main.jsx
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/harsimran2074/shopping--website-react.git
+```
+
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+
+
+## 📚 What I Learned
+
+* Building reusable React components
+* Managing global state with Redux
+* Handling dynamic rendering
+* Working with arrays using `map()`, `filter()`, and `reduce()`
+* Creating responsive and interactive user interfaces
+
+---
+
+## 🔮 Future Improvements
+
+* Product search
+* Product filtering
+* User authentication
+* Wishlist functionality
+* Backend integration
+* Payment gateway integration
+
+---
+
+## 👨‍💻 Author
+
+**Harsimran Singh**
+
+GitHub: https://github.com/harsimran2074
+
+LinkedIn: https://www.linkedin.com/in/harsimran-singh-420063333/
